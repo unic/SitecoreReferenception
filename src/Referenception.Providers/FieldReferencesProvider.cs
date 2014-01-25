@@ -1,4 +1,4 @@
-﻿namespace Referenception.Common
+﻿namespace Referenception.Providers
 {
     using System.Collections.Generic;
     using System.Data;

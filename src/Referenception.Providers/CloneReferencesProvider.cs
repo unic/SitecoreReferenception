@@ -1,4 +1,4 @@
-﻿namespace Referenception.Common
+﻿namespace Referenception.Providers
 {
     using System.Collections.Generic;
     using System.Data;
@@ -9,9 +9,9 @@
     using Sitecore.Globalization;
 
     /// <summary>
-    /// The usages reference provider.
+    /// The clone references provides.
     /// </summary>
-    public class UsageReferencesProvider : ReferenceProviderBase
+    public class CloneReferencesProvider : ReferenceProviderBase
     {
         /// <summary>
         /// Gets the data table.
@@ -27,7 +27,7 @@
             table.Columns.Add(Translate.Text("Item path"), typeof(string));
             table.Columns.Add(ReferenceProviderBase.ToolTipColumnName, typeof(IDictionary<string, string>));
 
-            foreach (var item in ItemReferrer.GetLinkedItems(sourceItem))
+            foreach (var item in ItemReferrer.GetClonedItems(sourceItem))
             {
                 table.Rows.Add(item.ID, item.DisplayName, item.Paths.FullPath, TooltipUtil.GetItemTooltip(item));
             }
