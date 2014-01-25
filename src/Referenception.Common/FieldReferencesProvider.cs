@@ -14,6 +14,11 @@
     {
         private readonly List<string> fieldTypes = new List<string>();
 
+        public FieldReferencesProvider()
+        {
+            this.HasFieldColumn = true;
+        }
+        
         public List<string> FieldTypes
         {
             get
@@ -22,27 +27,27 @@
             }
         }
 
-        public override IEnumerable<DataTable> GetData(Item sourceItem)
+        public override DataTable GetData(Item sourceItem)
         {
             var fields = sourceItem.Fields
                 .Where(field => this.FieldTypes.Any(type => type == field.Type))
                 .Where(field => !field.IsStandardTemplateField());
 
+            var dataTable = new DataTable();
             foreach (var field in fields)
             {
-                var dataTable = new DataTable();
-                dataTable.Title = field.DisplayName;
-
                 foreach (var id in field.Value.Split('|'))
                 {
                     var item = sourceItem.Database.GetItem(id);
                     if (item == null) continue;
 
-                    dataTable.Rows.Add(item.ToDataRow());
+                    var dataRow = item.ToDataRow();
+                    dataRow.FieldName = field.DisplayName;
+                    dataTable.Rows.Add(dataRow);
                 }
-
-                yield return dataTable;
             }
+
+            return dataTable;
         }
     }
 }

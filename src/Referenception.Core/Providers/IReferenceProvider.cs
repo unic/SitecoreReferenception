@@ -14,6 +14,8 @@ namespace Referenception.Core.Providers
     {
         string Title { get; set; }
 
-        IEnumerable<DataTable> GetData(Item item);
+        DataTable GetData(Item item);
+
+        bool HasFieldColumn { get; set; }
     }
 }

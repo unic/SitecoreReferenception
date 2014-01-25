@@ -8,8 +8,6 @@
         {
             this.Rows = new List<DataRow>();
         }
-        
-        public string Title { get; set; }
 
         public List<DataRow> Rows { get; private set; } 
     }

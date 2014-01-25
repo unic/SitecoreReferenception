@@ -8,6 +8,8 @@
     public class DataRow
     {
         public Item Item { get; set; }
+
+        public string FieldName { get; set; }
         
         public string DisplayName { get; set; }
 

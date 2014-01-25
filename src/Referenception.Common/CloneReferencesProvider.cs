@@ -14,11 +14,11 @@
 
     public class CloneReferencesProvider : ReferenceProviderBase
     {
-        public override IEnumerable<DataTable> GetData(Item sourceItem)
+        public override DataTable GetData(Item sourceItem)
         {
             var table = new DataTable();
             table.Rows.AddRange(ItemReferrer.GetClonedItems(sourceItem).Select(item => item.ToDataRow()));
-            yield return table;
+            return table;
         }
     }
 }

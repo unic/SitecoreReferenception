@@ -1,140 +1,82 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ShowReferences.aspx.cs" Inherits="Referenception.Website.sitecore_modules.Shell.Referenception.ShowReferences" %>
 
+<%@ Import Namespace="Sitecore.Globalization" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>References</title>
+    <title><%= Translate.Text("Referenception") %></title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  Klone
-                </a>
-                <span class="badge pull-right">3</span>
-              </h2>
+
+        <asp:Panel runat="server" ID="panNoProviders" CssClass="alert alert-warning" Visible="False">
+            <%= Translate.Text("There are no providers available for this item.") %>
+        </asp:Panel>
+
+        <asp:Panel runat="server" ID="panError" CssClass="alert alert-danger" Visible="False">
+            <%= Translate.Text("Could not load references, please check the log for more informations.") %>
+        </asp:Panel>
+
+        <asp:PlaceHolder runat="server" ID="plhData" Visible="False">
+
+            <div class="panel-group" id="accordion">
+
+                <asp:Repeater runat="server" ID="repProviders">
+
+                    <ItemTemplate>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%# DataBinder.Eval(Container, "ItemIndex") %>">
+                                        <asp:Literal runat="server" ID="litTitle" />
+                                    </a>
+                                    <span class="badge pull-right">
+                                        <asp:Literal runat="server" ID="litRowCount" />
+                                    </span>
+                                </h2>
+                            </div>
+                            <div id="collapse<%# DataBinder.Eval(Container, "ItemIndex") %>" class="panel-collapse collapse <%#FirstCssClass(Container.ItemIndex)%>">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <asp:PlaceHolder runat="server" ID="plhFieldColumn">
+                                                    <th><%= Translate.Text("Field name") %></th>
+                                                </asp:PlaceHolder>
+                                                <th><%= Translate.Text("Item ID") %></th>
+                                                <th><%= Translate.Text("Item display name") %></th>
+                                                <th><%= Translate.Text("Item path") %></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                            <asp:Repeater runat="server" ID="repRows">
+                                                <ItemTemplate>
+                                                    <tr>
+                                                        <asp:PlaceHolder runat="server" ID="plhFieldColumn">
+                                                            <td><asp:Literal runat="server" ID="litFieldName" /></td>
+                                                        </asp:PlaceHolder>
+                                                        <td><asp:Literal runat="server" ID="litId" /></td>
+                                                        <td><asp:Literal runat="server" ID="litDisplayName" /></td>
+                                                        <td><asp:Literal runat="server" ID="litPath" /></td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+
+                </asp:Repeater>
+
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-              <div class="panel-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Display Name</th>
-                            <th>Pfad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                        <tr>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                        <tr>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                  In Items referenziert
-                </a>
-                <span class="badge pull-right">30</span>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Display Name</th>
-                            <th>Pfad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                        <tr>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                        <tr>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h2 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                  Referenzierte Items
-                </a>
-                <span class="badge pull-right">17</span>
-              </h2>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="panel-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Feld</th>
-                            <th>ID</th>
-                            <th>Display Name</th>
-                            <th>Pfad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Droplink 1</td>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                        <tr>
-                            <td>Droplink 2</td>
-                            <td>{0f8fad5b-d9cb-469f-a165-70867728950e}</td>
-                            <td>Test Item</td>
-                            <td>/sitecore/content/Home/Test Item</td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+        </asp:PlaceHolder>
     </form>
 
     <script src="assets/js/jquery.js"></script>

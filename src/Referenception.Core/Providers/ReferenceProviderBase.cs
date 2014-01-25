@@ -10,6 +10,11 @@
     {
         private readonly List<string> templates = new List<string>();
 
+        protected ReferenceProviderBase()
+        {
+            this.HasFieldColumn = false;
+        }
+
         public List<string> Templates
         {
             get
@@ -20,6 +25,8 @@
 
         public virtual string Title { get; set; }
 
-        public abstract IEnumerable<DataTable> GetData(Item item);
+        public virtual bool HasFieldColumn { get; set; }
+
+        public abstract DataTable GetData(Item item);
     }
 }
