@@ -18,6 +18,6 @@
 
         public virtual string Title { get; set; }
 
-        public abstract IEnumerable<Table> GetData();
+        public abstract IEnumerable<DataTable> GetData();
     }
 }

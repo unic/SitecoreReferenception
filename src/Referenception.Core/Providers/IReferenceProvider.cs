@@ -12,6 +12,6 @@ namespace Referenception.Core.Providers
     {
         string Title { get; set; }
 
-        IEnumerable<Table> GetData();
+        IEnumerable<DataTable> GetData();
     }
 }

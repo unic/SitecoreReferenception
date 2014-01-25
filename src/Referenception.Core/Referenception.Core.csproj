@@ -45,8 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Row.cs" />
-    <Compile Include="Data\Table.cs" />
+    <Compile Include="Data\DataRow.cs" />
+    <Compile Include="Data\DataTable.cs" />
     <Compile Include="Extensions\FieldExtension.cs" />
     <Compile Include="Providers\IReferenceProvider.cs" />
     <Compile Include="Utilities\ItemReferrer.cs" />

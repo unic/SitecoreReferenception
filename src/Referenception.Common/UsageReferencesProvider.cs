@@ -14,9 +14,9 @@ namespace Referenception.Common
 
     public class UsageReferencesProvider : ReferenceProviderBase
     {
-        public override IEnumerable<Table> GetData()
+        public override IEnumerable<DataTable> GetData()
         {
-            throw new NotImplementedException();
+            return Enumerable.Empty<DataTable>();
         }
     }
 }
