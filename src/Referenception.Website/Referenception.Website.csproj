@@ -70,6 +70,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sitecore\shell\client\referenception\showreferences\ShowReferences.cs" />
+    <Compile Include="sitecore_modules\Shell\Referenception\ShowReferences.aspx.cs">
+      <DependentUpon>ShowReferences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore_modules\Shell\Referenception\ShowReferences.aspx.designer.cs">
+      <DependentUpon>ShowReferences.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -80,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Referenception.config" />
+    <Content Include="sitecore_modules\Shell\Referenception\ShowReferences.aspx" />
     <Content Include="Test.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +99,10 @@
       <Project>{9d4f4933-73ea-4bd9-9ae1-3b5b6b705046}</Project>
       <Name>Referenception.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sitecore_modules\Shell\Referenception\assets\css\" />
+    <Folder Include="sitecore_modules\Shell\Referenception\assets\js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
