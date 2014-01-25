@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\FieldExtension.cs" />
     <Compile Include="Utilities\ItemReferrer.cs" />
     <Compile Include="Commands\ShowReferences.cs" />
     <Compile Include="Configuration\ConfigurationFactory.cs" />

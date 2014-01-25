@@ -1,19 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Referenception.Common
+﻿namespace Referenception.Common
 {
-    using Referenception.Core;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Referenception.Core.Extensions;
     using Referenception.Core.Nodes;
 
     public class FieldReferencesProvider : ReferenceProviderBase
     {
+        private readonly List<string> fieldTypes = new List<string>();
+
+        public List<string> FieldTypes
+        {
+            get
+            {
+                return this.fieldTypes;
+            }
+        }
+
         public override IEnumerable<INode> GetChildren()
         {
-            return Enumerable.Empty<INode>();
+            var fields = this.Context.Item.Fields
+                .Where(field => this.FieldTypes.Any(type => type == field.Type))
+                .Where(field => !field.IsStandardTemplateField());
+
+            return fields.Select(field => new FieldNode
+                                              {
+                                                  Context = new ReferenceContext { Item = this.Context.Item, Field = field },
+                                                  DisplayName = field.DisplayName
+                                              });
         }
     }
 }
