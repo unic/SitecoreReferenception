@@ -27,16 +27,8 @@
         public override void Execute(CommandContext context)
         {
             if (context == null || context.Parameters == null || context.Parameters.Count <= 0) return;
-
-            var itemId = context.Parameters[0];
-
-            // Todo (PaM): Add the correct application url
             this.applicationUrl = new UrlString(Sitecore.Configuration.Settings.GetSetting("Referenception.ApplicationUrl", string.Empty));
             context.Items[0].Uri.AddToUrlString(this.applicationUrl);
-            UIUtil.AddContentDatabaseParameter(this.applicationUrl);
-            this.applicationUrl.Add("fo", itemId);
-            this.applicationUrl.Add("il", "0");
-            this.applicationUrl.Add("la", context.Parameters["la"] ?? Context.Language.CultureInfo.TwoLetterISOLanguageName);
             SheerResponse.Eval(new ShowEditorTab()
             {
                 Command = "contenteditor:launchblanktab",
