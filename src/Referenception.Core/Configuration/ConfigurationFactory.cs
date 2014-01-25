@@ -2,16 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Configuration.Provider;
-    using System.Xml;
     using System.Linq;
-
     using Referenception.Core.Providers;
-
-    using Sitecore.Data;
     using Sitecore.Data.Items;
-    using Sitecore.Data.Managers;
-    using Sitecore.Data.Templates;
     using Sitecore.Diagnostics;
     using Extensions;
 

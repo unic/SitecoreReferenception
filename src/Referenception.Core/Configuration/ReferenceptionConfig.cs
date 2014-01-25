@@ -1,8 +1,6 @@
 ﻿namespace Referenception.Core.Configuration
 {
-    using System.Collections;
     using System.Collections.Generic;
-
     using Referenception.Core.Providers;
 
     public class ReferenceptionConfig

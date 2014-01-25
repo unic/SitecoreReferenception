@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace Referenception.Website.sitecore_modules.Shell.Referenception
 {
+    using System.Data;
+
     using Sitecore.Configuration;
     using Sitecore.Data;
     using Sitecore.Data.Items;
@@ -62,17 +64,28 @@ namespace Referenception.Website.sitecore_modules.Shell.Referenception
             var item = e.Item;
             if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
             {
-                var provider = (Core.Providers.IReferenceProvider)item.DataItem;
-                var rows = provider.GetData(this.item).Rows;
+                var provider = (Core.Providers.ReferenceProviderBase)item.DataItem;
+                var dataTable = provider.GetData(this.item);
+                var rowCount = dataTable.Rows.Count;
 
                 ((Literal)item.FindControl("litTitle")).Text = provider.Title;
-                ((Literal)item.FindControl("litRowCount")).Text = rows.Count.ToString();
-                ((PlaceHolder)item.FindControl("plhFieldColumn")).Visible = provider.HasFieldColumn;
+                ((Literal)item.FindControl("litRowCount")).Text = rowCount.ToString();
 
-                var rowsRepeater = (Repeater)item.FindControl("repRows");
-                rowsRepeater.ItemDataBound += this.Rows_OnItemDataBound;
-                rowsRepeater.DataSource = rows;
-                rowsRepeater.DataBind();
+                if (rowCount > 0)
+                {
+                    var repColumns = (Repeater)item.FindControl("repColumns");
+                    repColumns.DataSource = dataTable.Columns.Cast<DataColumn>().Select(column => column.ColumnName);
+                    repColumns.DataBind();
+
+                    var rowsRepeater = (Repeater)item.FindControl("repRows");
+                    rowsRepeater.ItemDataBound += this.Rows_OnItemDataBound;
+                    rowsRepeater.DataSource = dataTable.Rows;
+                    rowsRepeater.DataBind();
+                    return;
+                }
+
+                ((Panel)item.FindControl("panBody")).Visible = false;
+                ((Panel)item.FindControl("panNoReferences")).Visible = true;
             }
         }
 
@@ -81,13 +94,11 @@ namespace Referenception.Website.sitecore_modules.Shell.Referenception
             var item = e.Item;
             if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
             {
-                var dataRow = (Core.Nodes.DataRow)item.DataItem;
+                var dataRow = (DataRow)item.DataItem;
 
-                ((Literal)item.FindControl("litFieldName")).Text = dataRow.FieldName;
-                ((Literal)item.FindControl("litId")).Text = dataRow.Id;
-                ((Literal)item.FindControl("litDisplayName")).Text = dataRow.DisplayName;
-                ((Literal)item.FindControl("litPath")).Text = dataRow.ItemPath;
-                ((PlaceHolder)item.FindControl("plhFieldColumn")).Visible = !string.IsNullOrWhiteSpace(dataRow.FieldName);
+                var repColumns = (Repeater)item.FindControl("repColumns");
+                repColumns.DataSource = dataRow.ItemArray;
+                repColumns.DataBind();
             }
         }
     }
