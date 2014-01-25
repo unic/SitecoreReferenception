@@ -2,6 +2,7 @@
 {
     using System.Globalization;
     using System.Linq;
+    using Referenception.Core.Data;
     using Sitecore.Data.Items;
 
     public class DataRow
