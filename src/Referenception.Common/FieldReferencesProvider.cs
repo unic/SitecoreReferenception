@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Referenception.Core.Data;
     using Referenception.Core.Extensions;
+    using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
 
     using Sitecore.Data.Items;

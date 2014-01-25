@@ -5,8 +5,8 @@
     using System.Linq;
 
     using Referenception.Core;
-    using Referenception.Core.Data;
     using Referenception.Core.Extensions;
+    using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
 

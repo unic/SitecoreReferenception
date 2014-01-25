@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Referenception.Core.Data
+﻿namespace Referenception.Core.Nodes
 {
+    using System.Collections.Generic;
+
     public class DataTable
     {
         public DataTable()
