@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Referenception.Core.Utilities
+﻿namespace Referenception.Core.Utilities
 {
+    using System.Collections.Generic;
     using Sitecore.Data.Items;
     using Sitecore.Globalization;
 
+    /// <summary>
+    /// The tooltip utility.
+    /// </summary>
     public static class TooltipUtil
     {
+        /// <summary>
+        /// Gets the item tooltip.
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>The item tooltip.</returns>
         public static IDictionary<string, string> GetItemTooltip(Item item)
         {
             var dictionary = new Dictionary<string, string>();
