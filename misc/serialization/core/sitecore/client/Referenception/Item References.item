@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {9D020093-026A-4756-B8D6-43E6813629F3}
+database: core
+path: /sitecore/client/Referenception/Item References
+parent: {CF820227-B28B-46EF-912A-BECD408401A0}
+name: Item References
+master: {00000000-0000-0000-0000-000000000000}
+template: {5F2C442F-2554-4C80-B1D9-2195FA6168B1}
+templatekey: Speak-BasePage
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 778
+
+<r>
+  <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{4F72A793-BDBC-4262-9523-6AADD8FEA487}">
+    <r id="{FDE6FB54-A5F6-4B20-A5AE-3AD8F8E539C9}" ph="Page.Body" uid="{DB01BC8E-97C7-49DC-8A7B-6C3ABEB95502}" />
+    <r id="{19A9EB6B-1283-49EB-BD75-AAFE76453469}" ph="ApplicationContent" uid="{5959E8FE-2258-4F92-96DC-C528834F4DF8}" />
+    <r id="{08B6767B-8E8A-41C8-8880-EFEBB4EAE0E3}" par="Id=TreeView&amp;IsCheckboxEnabled=False" ph="ApplicationContent.Main" uid="{7BEA0826-D4A5-4145-B7AF-5F2DCC24841C}" />
+    <r id="{DAFAFFB8-74AF-4141-A96A-70B16834CEC6}" par="PageCodeTypeName=Referenception.Website.sitecore.shell.client.referenception.showreferences.ShowReferences%2cReferenception.Website" ph="Page.Code" uid="{6C633C5F-706B-4A83-ACF0-E5D480F16990}" />
+  </d>
+</r>
+----version----
+language: en
+version: 1
+revision: 841d5687-4be7-47ed-a5e7-59393cc33a74
+
+----field----
+field: {7205A57F-93B4-413A-AA9A-6B16BBC59565}
+name: BrowserTitle
+key: browsertitle
+content-length: 14
+
+Referenception
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140125T074631
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+841d5687-4be7-47ed-a5e7-59393cc33a74
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140125T095704:635262406245959851
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
