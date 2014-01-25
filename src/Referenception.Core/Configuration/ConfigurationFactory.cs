@@ -5,6 +5,7 @@
     using System.Xml;
     using System.Linq;
 
+    using Referenception.Core.Extensions;
     using Referenception.Core.Nodes;
 
     using Sitecore.Data;
@@ -30,21 +31,6 @@
                     yield return provider;
                 }
             }
-        }
-
-        private static bool HasBaseTemplate(this Item item, string baseTemplate)
-        {
-            if (item == null || string.IsNullOrWhiteSpace(baseTemplate)) return false;
-
-            Template template = TemplateManager.GetTemplate(item);
-            if (template == null) return false;
-
-            if (ID.IsID(baseTemplate) || ShortID.IsShortID(baseTemplate))
-            {
-                return template.InheritsFrom(new ID(baseTemplate));
-            }
-
-            return template.InheritsFrom(baseTemplate);
         }
     }
 }

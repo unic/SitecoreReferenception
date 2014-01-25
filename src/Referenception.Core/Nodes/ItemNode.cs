@@ -8,7 +8,13 @@
     {
         public override IEnumerable<INode> GetChildren()
         {
-            return ConfigurationFactory.GetProviders(this.Context);
+            var providers = ConfigurationFactory.GetProviders(this.Context);
+            foreach (var provider in providers)
+            {
+                provider.DisplayName = provider.ToString();
+                provider.Context = this.Context;
+                yield return provider;
+            }
         }
     }
 }

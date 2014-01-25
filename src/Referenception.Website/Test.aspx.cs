@@ -17,14 +17,25 @@ namespace Referenception.Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var context = new ReferenceContext { Item = Sitecore.Context.Database.GetItem("/sitecore/content/Home") };
-            var itemNode = new ItemNode { Context = context };
+            var item = Sitecore.Context.Database.GetItem("/sitecore/content/Home");
+            var context = new ReferenceContext { Item = item };
+            var itemNode = new ItemNode { Context = context, DisplayName = item.DisplayName };
 
-            Response.Write(itemNode.Context.Item.DisplayName + "<br />");
+            this.OutputNode(itemNode, 1);
+        }
 
-            foreach (var child in itemNode.GetChildren())
+        private void OutputNode(INode node, int spaces)
+        {
+            for (int i = 0; i < spaces; i++)
             {
-                Response.Write(" - " + child.ToString() + "<br />");
+                Response.Write("-");
+            }
+
+            Response.Write(node.DisplayName + "<br />");
+
+            foreach (var childNode in node.GetChildren())
+            {
+                this.OutputNode(childNode, spaces+1);
             }
         }
     }

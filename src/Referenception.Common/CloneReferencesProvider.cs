@@ -13,7 +13,7 @@ namespace Referenception.Common
     {
         public override IEnumerable<INode> GetChildren()
         {
-            throw new NotImplementedException();
+            return Enumerable.Empty<INode>();
         }
     }
 }
