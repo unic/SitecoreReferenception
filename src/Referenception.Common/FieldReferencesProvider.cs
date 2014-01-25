@@ -9,6 +9,8 @@
     using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
 
+    using Sitecore.Data.Items;
+
     public class FieldReferencesProvider : ReferenceProviderBase
     {
         private readonly List<string> fieldTypes = new List<string>();
@@ -34,7 +36,7 @@
         //                                      });
         //}
 
-        public override IEnumerable<DataTable> GetData()
+        public override IEnumerable<DataTable> GetData(Item item)
         {
             return Enumerable.Empty<DataTable>();
         }
