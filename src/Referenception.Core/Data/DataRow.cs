@@ -17,5 +17,7 @@ namespace Referenception.Core.Data
         public string Id { get; set; }
 
         public string TemplateName { get; set; }
+
+        public string ItemPath { get; set; }
     }
 }

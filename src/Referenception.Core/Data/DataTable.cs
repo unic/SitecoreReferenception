@@ -15,6 +15,6 @@ namespace Referenception.Core.Data
         
         public string Title { get; set; }
 
-        public IList<DataRow> Rows { get; private set; } 
+        public List<DataRow> Rows { get; private set; } 
     }
 }

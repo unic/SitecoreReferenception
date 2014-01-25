@@ -11,7 +11,6 @@ namespace Referenception.Website
 
     using Referenception.Core;
     using Referenception.Core.Configuration;
-    using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
 
     using Sitecore.Data.Items;
@@ -38,7 +37,7 @@ namespace Referenception.Website
 
                 foreach (var row in table.Rows)
                 {
-                    Response.Write(string.Format("name: {0}", row.DisplayName));
+                    Response.Write(string.Format("name: {0}<br/>", row.DisplayName));
                 }
             }
         }
