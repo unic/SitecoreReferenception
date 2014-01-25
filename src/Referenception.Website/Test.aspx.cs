@@ -26,6 +26,8 @@ namespace Referenception.Website
 
         private void OutputNode(INode node, int spaces)
         {
+            if (spaces > 10) return;
+            
             for (int i = 0; i < spaces; i++)
             {
                 Response.Write("-");

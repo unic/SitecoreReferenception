@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Referenception.Common
+﻿namespace Referenception.Common
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Referenception.Core;
     using Referenception.Core.Nodes;
 

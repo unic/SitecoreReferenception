@@ -12,6 +12,7 @@ namespace Referenception.Core.Extensions
 
     using Sitecore;
     using Sitecore.Data;
+    using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
     using Sitecore.Data.Managers;
     using Sitecore.Data.Templates;
