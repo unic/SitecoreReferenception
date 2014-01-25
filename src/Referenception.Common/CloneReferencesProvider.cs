@@ -5,18 +5,16 @@
     using System.Linq;
 
     using Referenception.Core;
+    using Referenception.Core.Data;
     using Referenception.Core.Nodes;
+    using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
 
     public class CloneReferencesProvider : ReferenceProviderBase
     {
-        public override IEnumerable<INode> GetChildren()
+        public override IEnumerable<Table> GetData()
         {
-            var items = ItemReferrer.GetClonedItems(this.Context.Item);
-            return items.Select(item => new ItemNode
-            {
-                Context = new ReferenceContext { Item = item },
-            });
+            throw new NotImplementedException();
         }
     }
 }

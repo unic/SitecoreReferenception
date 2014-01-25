@@ -1,8 +1,10 @@
-﻿namespace Referenception.Core.Nodes
+﻿namespace Referenception.Core.Providers
 {
     using System.Collections.Generic;
 
-    public abstract class ReferenceProviderBase : NodeBase
+    using Referenception.Core.Data;
+
+    public abstract class ReferenceProviderBase : IReferenceProvider
     {
         private readonly List<string> templates = new List<string>();
 
@@ -13,5 +15,9 @@
                 return this.templates;
             }
         }
+
+        public virtual string Title { get; set; }
+
+        public abstract IEnumerable<Table> GetData();
     }
 }

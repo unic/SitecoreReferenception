@@ -7,18 +7,16 @@ using System.Threading.Tasks;
 namespace Referenception.Common
 {
     using Referenception.Core;
+    using Referenception.Core.Data;
     using Referenception.Core.Nodes;
+    using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
 
     public class UsageReferencesProvider : ReferenceProviderBase
     {
-        public override IEnumerable<INode> GetChildren()
+        public override IEnumerable<Table> GetData()
         {
-            var items = ItemReferrer.GetLinkedItems(this.Context.Item);
-            return items.Select(item => new ItemNode
-                                        {
-                                            Context = new ReferenceContext { Item = item }
-                                        });
+            throw new NotImplementedException();
         }
     }
 }

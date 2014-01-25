@@ -7,6 +7,7 @@
     using System.Linq;
 
     using Referenception.Core.Nodes;
+    using Referenception.Core.Providers;
 
     using Sitecore.Data;
     using Sitecore.Data.Items;
