@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Core", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Common", "src\Referenception.Common\Referenception.Common.csproj", "{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Common.Tests", "tests\Referenception.Common.Tests\Referenception.Common.Tests.csproj", "{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1F85683B-E13B-4CE5-BB8D-49B5F534BA74}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -36,10 +34,6 @@ Global
 		{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
