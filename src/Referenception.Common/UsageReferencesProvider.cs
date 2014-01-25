@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 namespace Referenception.Common
 {
     using Referenception.Core;
+    using Referenception.Core.Data;
     using Referenception.Core.Nodes;
+    using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
+
+    using Sitecore.Data.Items;
 
     public class UsageReferencesProvider : ReferenceProviderBase
     {
-        public override IEnumerable<INode> GetChildren()
+        public override IEnumerable<DataTable> GetData(Item item)
         {
-            var items = ItemReferrer.GetLinkedItems(this.Context.Item);
-            return items.Select(item => new ItemNode
-                                        {
-                                            Context = new ReferenceContext { Item = item }
-                                        });
+            return Enumerable.Empty<DataTable>();
         }
     }
 }

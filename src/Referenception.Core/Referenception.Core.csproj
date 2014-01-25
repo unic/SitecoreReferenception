@@ -45,18 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\DataRow.cs" />
+    <Compile Include="Data\DataTable.cs" />
     <Compile Include="Extensions\FieldExtension.cs" />
+    <Compile Include="Providers\IReferenceProvider.cs" />
     <Compile Include="Utilities\ItemReferrer.cs" />
     <Compile Include="Commands\ShowReferences.cs" />
     <Compile Include="Configuration\ConfigurationFactory.cs" />
     <Compile Include="Configuration\ReferenceptionConfig.cs" />
     <Compile Include="Nodes\FieldNode.cs" />
-    <Compile Include="Nodes\INode.cs" />
-    <Compile Include="Nodes\ItemNode.cs" />
-    <Compile Include="Nodes\NodeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Nodes\ReferenceProviderBase.cs" />
-    <Compile Include="Nodes\ReferenceContext.cs" />
+    <Compile Include="Providers\ReferenceProviderBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
