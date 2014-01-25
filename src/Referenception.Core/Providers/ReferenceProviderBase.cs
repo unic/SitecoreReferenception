@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using Referenception.Core.Data;
+    using Referenception.Core.Nodes;
 
     using Sitecore.Data.Items;
 

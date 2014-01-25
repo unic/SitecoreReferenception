@@ -6,7 +6,6 @@
     using System.Xml;
     using System.Linq;
 
-    using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
 
     using Sitecore.Data;
@@ -14,6 +13,7 @@
     using Sitecore.Data.Managers;
     using Sitecore.Data.Templates;
     using Sitecore.Diagnostics;
+    using Extensions;
 
     public static class ConfigurationFactory
     {
@@ -52,21 +52,6 @@
                 Cache.Add(templateName, validProviders);
                 return validProviders;
             }
-        }
-
-        private static bool HasBaseTemplate(this Item item, string baseTemplate)
-        {
-            if (item == null || string.IsNullOrWhiteSpace(baseTemplate)) return false;
-
-            Template template = TemplateManager.GetTemplate(item);
-            if (template == null) return false;
-
-            if (ID.IsID(baseTemplate) || ShortID.IsShortID(baseTemplate))
-            {
-                return template.InheritsFrom(new ID(baseTemplate));
-            }
-
-            return template.InheritsFrom(baseTemplate);
         }
     }
 }

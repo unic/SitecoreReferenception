@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using Referenception.Core.Data;
     using Referenception.Core.Extensions;
     using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
@@ -23,22 +22,27 @@
             }
         }
 
-        //public override IEnumerable<INode> GetChildren()
-        //{
-        //    var fields = this.Context.Item.Fields
-        //        .Where(field => this.FieldTypes.Any(type => type == field.Type))
-        //        .Where(field => !field.IsStandardTemplateField());
-
-        //    return fields.Select(field => new FieldNode
-        //                                      {
-        //                                          Context = new ReferenceContext { Item = this.Context.Item, Field = field },
-        //                                          DisplayName = field.DisplayName
-        //                                      });
-        //}
-
-        public override IEnumerable<DataTable> GetData(Item item)
+        public override IEnumerable<DataTable> GetData(Item sourceItem)
         {
-            return Enumerable.Empty<DataTable>();
+            var fields = sourceItem.Fields
+                .Where(field => this.FieldTypes.Any(type => type == field.Type))
+                .Where(field => !field.IsStandardTemplateField());
+
+            foreach (var field in fields)
+            {
+                var dataTable = new DataTable();
+                dataTable.Title = field.DisplayName;
+
+                foreach (var id in field.Value.Split('|'))
+                {
+                    var item = sourceItem.Database.GetItem(id);
+                    if (item == null) continue;
+
+                    dataTable.Rows.Add(item.ToDataRow());
+                }
+
+                yield return dataTable;
+            }
         }
     }
 }

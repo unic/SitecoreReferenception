@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Referenception.Core.Providers
 {
-    using Referenception.Core.Data;
+    using Referenception.Core.Nodes;
 
     using Sitecore.Data.Items;
 

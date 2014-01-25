@@ -5,7 +5,7 @@
     using System.Linq;
 
     using Referenception.Core;
-    using Referenception.Core.Data;
+    using Referenception.Core.Extensions;
     using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
@@ -14,9 +14,11 @@
 
     public class CloneReferencesProvider : ReferenceProviderBase
     {
-        public override IEnumerable<DataTable> GetData(Item item)
+        public override IEnumerable<DataTable> GetData(Item sourceItem)
         {
-            return Enumerable.Empty<DataTable>();
+            var table = new DataTable();
+            table.Rows.AddRange(ItemReferrer.GetClonedItems(sourceItem).Select(item => item.ToDataRow()));
+            yield return table;
         }
     }
 }
