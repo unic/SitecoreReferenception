@@ -19,7 +19,7 @@ namespace Referenception.Website
         {
             var item = Sitecore.Context.Database.GetItem("/sitecore/content/Home");
             var context = new ReferenceContext { Item = item };
-            var itemNode = new ItemNode { Context = context, DisplayName = item.DisplayName };
+            var itemNode = new ItemNode { Context = context };
 
             this.OutputNode(itemNode, 1);
         }
@@ -33,7 +33,7 @@ namespace Referenception.Website
                 Response.Write("---");
             }
 
-            Response.Write(node.DisplayName + "<br />");
+            Response.Write(string.Format("{0} - {1}<br/>", node.Icon, node.DisplayName));
 
             foreach (var childNode in node.GetChildren())
             {

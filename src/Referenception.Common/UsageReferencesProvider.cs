@@ -17,8 +17,7 @@ namespace Referenception.Common
             var items = ItemReferrer.GetLinkedItems(this.Context.Item);
             return items.Select(item => new ItemNode
                                         {
-                                            Context = new ReferenceContext { Item = item },
-                                            DisplayName = item.DisplayName
+                                            Context = new ReferenceContext { Item = item }
                                         });
         }
     }

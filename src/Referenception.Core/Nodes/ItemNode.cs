@@ -4,6 +4,9 @@
 
     using Referenception.Core.Configuration;
 
+    using Sitecore.Data.Managers;
+    using Sitecore.Resources;
+
     public class ItemNode : NodeBase
     {
         public override IEnumerable<INode> GetChildren()
@@ -13,6 +16,7 @@
             {
                 provider.DisplayName = provider.ToString();
                 provider.Context = this.Context;
+                provider.Icon = ThemeManager.GetImage("Applications/16x16/folder_add.png", IconWidth, IconHeight);
                 yield return provider;
             }
         }

@@ -16,7 +16,6 @@
             return items.Select(item => new ItemNode
             {
                 Context = new ReferenceContext { Item = item },
-                DisplayName = item.DisplayName
             });
         }
     }

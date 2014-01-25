@@ -14,7 +14,7 @@
                     if (item == null) continue;
 
                     var context = new ReferenceContext { Item = item };
-                    yield return new ItemNode { Context = context, DisplayName = item.DisplayName };
+                    yield return new ItemNode { Context = context };
                 }
             }
         }
