@@ -11,6 +11,7 @@
     <AssemblyName>Referenception.Common.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SitecorePath>D:\Sitecore\Playgrounds\referenception\Website</SitecorePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,8 +46,17 @@
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="$(SitecorePath)\Web.config" DestinationFiles="$(OutputPath)\$(AssemblyName).dll.config" />
+    <CreateItem Include="$(SitecorePath)\App_Config\**\*.*">
+      <Output ItemName="configFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(configFiles)" DestinationFolder="$(OutputPath)\App_Config\%(RecursiveDir)" />
+    <Copy SourceFiles="@(configFiles)" DestinationFolder="$(MSBuildProjectDirectory)\App_Config\%(RecursiveDir)" />
+    <CreateItem Include="$(SitecorePath)\bin\*.dll">
+      <Output ItemName="binaryFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(binaryFiles)" DestinationFolder="$(OutputPath)" />
+</Target>
 </Project>
