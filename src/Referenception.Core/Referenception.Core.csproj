@@ -45,10 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\FieldExtension.cs" />
+    <Compile Include="Utilities\ItemReferrer.cs" />
     <Compile Include="Commands\ShowReferences.cs" />
     <Compile Include="Configuration\ConfigurationFactory.cs" />
     <Compile Include="Configuration\ReferenceptionConfig.cs" />
-    <Compile Include="Extensions\ItemExtension.cs" />
     <Compile Include="Nodes\FieldNode.cs" />
     <Compile Include="Nodes\INode.cs" />
     <Compile Include="Nodes\ItemNode.cs" />
