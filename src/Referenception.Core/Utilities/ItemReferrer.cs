@@ -24,6 +24,7 @@
                     .Select(link => link.GetSourceItem())
                     .Where(item => item.Database == sourceItem.Database)
                     .Where(item => item.Language == sourceItem.Language)
+                    .Distinct(new ItemEqualityComparer())
                     .ToList();
         }
 
@@ -40,6 +41,7 @@
                     .Select(link => link.GetSourceItem())
                     .Where(item => item.Database == sourceItem.Database)
                     .Where(item => item.Language == sourceItem.Language)
+                    .Distinct(new ItemEqualityComparer())
                     .ToList();
         }
 
@@ -61,6 +63,37 @@
         private static bool IsClonedItem(ItemLink link)
         {
             return link.SourceFieldID == FieldIDs.Source;
+        }
+
+        /// <summary>
+        /// Compares two items for equality
+        /// </summary>
+        private class ItemEqualityComparer : IEqualityComparer<Item>
+        {
+            /// <summary>
+            /// Determines whether the specified objects are equal.
+            /// </summary>
+            /// <param name="firstItem">The first object of type <paramref name="Item" /> to compare.</param>
+            /// <param name="secondItem">The second object of type <paramref name="Item" /> to compare.</param>
+            /// <returns>
+            /// true if the specified objects are equal; otherwise, false.
+            /// </returns>
+            public bool Equals(Item firstItem, Item secondItem)
+            {
+                return firstItem.ID.Equals(secondItem.ID);
+            }
+
+            /// <summary>
+            /// Returns a hash code for this instance.
+            /// </summary>
+            /// <param name="item">The object.</param>
+            /// <returns>
+            /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            /// </returns>
+            public int GetHashCode(Item item)
+            {
+                return item.ID.GetHashCode();
+            }
         }
     }
 }
