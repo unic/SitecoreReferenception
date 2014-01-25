@@ -1,19 +1,23 @@
-﻿namespace Referenception.Common
+﻿namespace Referenception.Providers
 {
-    using System;
     using System.Collections.Generic;
     using System.Data;
-    using System.Linq;
-    using Referenception.Core.Extensions;
     using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
-
     using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.Globalization;
 
+    /// <summary>
+    /// The clone references provides.
+    /// </summary>
     public class CloneReferencesProvider : ReferenceProviderBase
     {
+        /// <summary>
+        /// Gets the data table.
+        /// </summary>
+        /// <param name="sourceItem">The source item.</param>
+        /// <returns>The data table</returns>
         public override DataTable GetData(Item sourceItem)
         {
             var table = new DataTable();
@@ -21,7 +25,7 @@
             table.Columns.Add(Translate.Text("Id"), typeof(ID));
             table.Columns.Add(Translate.Text("Display name"), typeof(string));
             table.Columns.Add(Translate.Text("Item path"), typeof(string));
-            table.Columns.Add(Translate.Text("Additional Informations"), typeof(IDictionary<string, string>));
+            table.Columns.Add(ReferenceProviderBase.ToolTipColumnName, typeof(IDictionary<string, string>));
 
             foreach (var item in ItemReferrer.GetClonedItems(sourceItem))
             {
@@ -31,14 +35,28 @@
             return table;
         }
 
+        /// <summary>
+        /// Gets the link item identifier.
+        /// </summary>
+        /// <param name="row">The row.</param>
+        /// <returns>
+        /// The link item ID
+        /// </returns>
         public override ID GetLinkItemId(DataRow row)
         {
             return (ID)row[Translate.Text("Id")];
         }
 
+        /// <summary>
+        /// Gets the tooltip.
+        /// </summary>
+        /// <param name="row">The row.</param>
+        /// <returns>
+        /// The tooltip key-value collection
+        /// </returns>
         public override IDictionary<string, string> GetTooltip(DataRow row)
         {
-            return (IDictionary<string, string>)row[Translate.Text("Additional Informations")];
+            return (IDictionary<string, string>)row[ToolTipColumnName];
         }
     }
 }

@@ -4,8 +4,16 @@
     using Sitecore.Data.Fields;
     using Sitecore.Data.Managers;
 
+    /// <summary>
+    /// The field extension methods.
+    /// </summary>
     public static class FieldExtension
     {
+        /// <summary>
+        /// Determines whether the field is a standard template field.
+        /// </summary>
+        /// <param name="field">The field.</param>
+        /// <returns>Whether the field is a standard template field.</returns>
         public static bool IsStandardTemplateField(this Field field)
         {
             if (field == null) return false;

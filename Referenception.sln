@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Website", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Core", "src\Referenception.Core\Referenception.Core.csproj", "{9D4F4933-73EA-4BD9-9AE1-3B5B6B705046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Common", "src\Referenception.Common\Referenception.Common.csproj", "{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Providers", "src\Referenception.Providers\Referenception.Providers.csproj", "{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

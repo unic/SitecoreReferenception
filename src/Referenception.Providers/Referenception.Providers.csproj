@@ -7,8 +7,8 @@
     <ProjectGuid>{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Referenception.Common</RootNamespace>
-    <AssemblyName>Referenception.Common</AssemblyName>
+    <RootNamespace>Referenception.Providers</RootNamespace>
+    <AssemblyName>Referenception.Providers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

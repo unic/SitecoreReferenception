@@ -6,11 +6,21 @@ body {
 	font-size: 12px !important;
 }
 
+th {
+	font-weight: bold;
+}
+
 .panel-heading, .popover-icon {
    cursor: pointer;
 }
 
-.popover-icon {
+h1.title {
+	margin-left: 16px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.glyphicon {
 	font-size: 14px;
 }
 
