@@ -1,13 +1,10 @@
 ﻿namespace Referenception.Common
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-
     using Referenception.Core.Extensions;
     using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
-
     using Sitecore.Data.Items;
 
     public class FieldReferencesProvider : ReferenceProviderBase

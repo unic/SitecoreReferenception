@@ -1,9 +1,7 @@
 ﻿namespace Referenception.Core.Providers
 {
     using System.Collections.Generic;
-
     using Referenception.Core.Nodes;
-
     using Sitecore.Data.Items;
 
     public abstract class ReferenceProviderBase : IReferenceProvider

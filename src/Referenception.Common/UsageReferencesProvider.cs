@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Referenception.Common
+﻿namespace Referenception.Common
 {
-    using Referenception.Core;
+    using System.Linq;
     using Referenception.Core.Extensions;
     using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
-
     using Sitecore.Data.Items;
 
     public class UsageReferencesProvider : ReferenceProviderBase

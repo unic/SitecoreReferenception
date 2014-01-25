@@ -2,10 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-
     using Sitecore;
     using Sitecore.Data.Items;
-    using Sitecore.Diagnostics;
     using Sitecore.Links;
 
     public static class ItemReferrer

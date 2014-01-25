@@ -2,7 +2,6 @@
 {
     using System;
     using System.Globalization;
-    using Sitecore;
     using Sitecore.Globalization;
     using Sitecore.Resources;
     using Sitecore.Shell.Framework.Commands;

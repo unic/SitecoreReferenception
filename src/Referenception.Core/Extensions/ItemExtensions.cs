@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Referenception.Core.Extensions
+﻿namespace Referenception.Core.Extensions
 {
     using Referenception.Core.Nodes;
-
     using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.Data.Managers;
