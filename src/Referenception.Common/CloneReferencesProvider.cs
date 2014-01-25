@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 namespace Referenception.Common
 {
     using Referenception.Core;
+    using Referenception.Core.Nodes;
 
     public class CloneReferencesProvider : ReferenceProviderBase
     {
-        public CloneReferencesProvider(ReferenceContext context) : base(context)
-        {
-        }
-
         public override IEnumerable<INode> GetChildren()
         {
             throw new NotImplementedException();

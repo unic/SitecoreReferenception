@@ -1,4 +1,4 @@
-﻿namespace Referenception.Core
+﻿namespace Referenception.Core.Nodes
 {
     using System.Collections.Generic;
 
@@ -8,13 +8,8 @@
 
         public virtual string Icon { get; set; }
 
-        public ReferenceContext Context { get; private set; }
+        public ReferenceContext Context { get; set; }
 
         public abstract IEnumerable<INode> GetChildren();
-
-        protected NodeBase(ReferenceContext context)
-        {
-            this.Context = context;
-        }
     }
 }
