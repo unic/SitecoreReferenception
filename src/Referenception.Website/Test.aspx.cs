@@ -28,7 +28,7 @@ namespace Referenception.Website
         {
             for (int i = 0; i < spaces; i++)
             {
-                Response.Write("-");
+                Response.Write("---");
             }
 
             Response.Write(node.DisplayName + "<br />");
