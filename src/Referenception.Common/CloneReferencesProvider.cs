@@ -1,5 +1,7 @@
 ﻿namespace Referenception.Common
 {
+    using System;
+    using System.Collections.Generic;
     using System.Data;
     using System.Linq;
     using Referenception.Core.Extensions;
@@ -19,10 +21,11 @@
             table.Columns.Add(Translate.Text("Id"), typeof(ID));
             table.Columns.Add(Translate.Text("Display name"), typeof(string));
             table.Columns.Add(Translate.Text("Item path"), typeof(string));
+            table.Columns.Add(Translate.Text("Additional Informations"), typeof(IDictionary<string, string>));
 
             foreach (var item in ItemReferrer.GetClonedItems(sourceItem))
             {
-                table.Rows.Add(item.ID, item.DisplayName, item.Paths.FullPath);
+                table.Rows.Add(item.ID, item.DisplayName, item.Paths.FullPath, TooltipUtil.GetItemTooltip(item));
             }
 
             return table;
@@ -31,6 +34,11 @@
         public override ID GetLinkItemId(DataRow row)
         {
             return (ID)row[Translate.Text("Id")];
+        }
+
+        public override IDictionary<string, string> GetTooltip(DataRow row)
+        {
+            return (IDictionary<string, string>)row[Translate.Text("Additional Informations")];
         }
     }
 }

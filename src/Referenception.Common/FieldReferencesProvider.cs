@@ -31,6 +31,7 @@
             table.Columns.Add(Translate.Text("Id"), typeof(ID));
             table.Columns.Add(Translate.Text("Display name"), typeof(string));
             table.Columns.Add(Translate.Text("Item path"), typeof(string));
+            table.Columns.Add(Translate.Text("Additional Informations"), typeof(IDictionary<string, string>));
 
             var fields = sourceItem.Fields
                 .Where(field => this.FieldTypes.Any(type => type == field.Type))
@@ -47,7 +48,7 @@
                     var fieldName = !fieldNameAdded ? field.DisplayName : string.Empty;
                     fieldNameAdded = true;
 
-                    table.Rows.Add(fieldName, item.ID, item.DisplayName, item.Paths.FullPath);
+                    table.Rows.Add(fieldName, item.ID, item.DisplayName, item.Paths.FullPath, TooltipUtil.GetItemTooltip(item));
                 }
             }
 
@@ -57,6 +58,11 @@
         public override ID GetLinkItemId(DataRow row)
         {
             return (ID)row[Translate.Text("Id")];
+        }
+
+        public override IDictionary<string, string> GetTooltip(DataRow row)
+        {
+            return (IDictionary<string, string>)row[Translate.Text("Additional Informations")];
         }
     }
 }

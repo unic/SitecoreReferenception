@@ -1,5 +1,6 @@
 ﻿namespace Referenception.Core.Providers
 {
+    using System;
     using System.Collections.Generic;
     using System.Data;
 
@@ -22,7 +23,12 @@
 
         public virtual ID GetLinkItemId(DataRow row)
         {
-            return ID.Null;
+            return null;
+        }
+
+        public virtual IDictionary<string, string> GetTooltip(DataRow row)
+        {
+            return null;
         }
 
         public abstract DataTable GetData(Item item);
