@@ -34,6 +34,7 @@
       <HintPath>..\..\lib\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FieldNode.cs" />
-    <Compile Include="INode.cs" />
-    <Compile Include="ItemNode.cs" />
-    <Compile Include="NodeBase.cs" />
+    <Compile Include="Configuration\ConfigurationFactory.cs" />
+    <Compile Include="Configuration\ReferenceptionConfig.cs" />
+    <Compile Include="Extensions\FieldExtension.cs" />
+    <Compile Include="Extensions\ItemExtension.cs" />
+    <Compile Include="Nodes\FieldNode.cs" />
+    <Compile Include="Nodes\INode.cs" />
+    <Compile Include="Nodes\ItemNode.cs" />
+    <Compile Include="Nodes\NodeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReferenceProviderBase.cs" />
-    <Compile Include="ReferenceContext.cs" />
+    <Compile Include="Nodes\ReferenceProviderBase.cs" />
+    <Compile Include="Nodes\ReferenceContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

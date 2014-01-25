@@ -1,4 +1,4 @@
-﻿namespace Referenception.Core
+﻿namespace Referenception.Core.Nodes
 {
     using System.Collections.Generic;
 

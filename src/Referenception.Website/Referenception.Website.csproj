@@ -61,17 +61,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sitecore\admin\Tests.aspx.cs">
-      <DependentUpon>Tests.aspx</DependentUpon>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sitecore\admin\Tests.aspx.designer.cs">
-      <DependentUpon>Tests.aspx</DependentUpon>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Referenception.config" />
-    <Content Include="sitecore\admin\Tests.aspx" />
+    <Content Include="Test.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Referenception.Common\Referenception.Common.csproj">
