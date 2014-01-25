@@ -1,20 +1,16 @@
 ﻿namespace Referenception.Core.Providers
 {
+    using System;
     using System.Collections.Generic;
+    using System.Data;
 
-    using Referenception.Core.Nodes;
-
+    using Sitecore.Data;
     using Sitecore.Data.Items;
 
-    public abstract class ReferenceProviderBase : IReferenceProvider
+    public abstract class ReferenceProviderBase
     {
         private readonly List<string> templates = new List<string>();
-
-        protected ReferenceProviderBase()
-        {
-            this.HasFieldColumn = false;
-        }
-
+        
         public List<string> Templates
         {
             get
@@ -23,9 +19,17 @@
             }
         }
 
-        public virtual string Title { get; set; }
+        public string Title { get; set; }
 
-        public virtual bool HasFieldColumn { get; set; }
+        public virtual ID GetLinkItemId(DataRow row)
+        {
+            return null;
+        }
+
+        public virtual IDictionary<string, string> GetTooltip(DataRow row)
+        {
+            return null;
+        }
 
         public abstract DataTable GetData(Item item);
     }

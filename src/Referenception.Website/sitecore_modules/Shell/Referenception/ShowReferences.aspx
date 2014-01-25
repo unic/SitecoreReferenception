@@ -39,16 +39,16 @@
                                 </h2>
                             </div>
                             <div id="collapse<%# DataBinder.Eval(Container, "ItemIndex") %>" class="panel-collapse collapse <%#FirstCssClass(Container.ItemIndex)%>">
-                                <div class="panel-body">
+                                
+                                <asp:Panel runat="server" ID="panBody" CssClass="panel-body">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <asp:PlaceHolder runat="server" ID="plhFieldColumn">
-                                                    <th><%= Translate.Text("Field name") %></th>
-                                                </asp:PlaceHolder>
-                                                <th><%= Translate.Text("Item ID") %></th>
-                                                <th><%= Translate.Text("Item display name") %></th>
-                                                <th><%= Translate.Text("Item path") %></th>
+                                                <asp:Repeater runat="server" ID="repColumns">
+                                                    <ItemTemplate>
+                                                        <th><%#Container.DataItem%></th>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -56,19 +56,22 @@
                                             <asp:Repeater runat="server" ID="repRows">
                                                 <ItemTemplate>
                                                     <tr>
-                                                        <asp:PlaceHolder runat="server" ID="plhFieldColumn">
-                                                            <td><asp:Literal runat="server" ID="litFieldName" /></td>
-                                                        </asp:PlaceHolder>
-                                                        <td><asp:Literal runat="server" ID="litId" /></td>
-                                                        <td><asp:Literal runat="server" ID="litDisplayName" /></td>
-                                                        <td><asp:Literal runat="server" ID="litPath" /></td>
+                                                        <asp:Repeater runat="server" ID="repColumns">
+                                                            <ItemTemplate>
+                                                                <td><%#Container.DataItem%></td>
+                                                            </ItemTemplate>
+                                                        </asp:Repeater>
                                                     </tr>
                                                 </ItemTemplate>
                                             </asp:Repeater>
 
                                         </tbody>
                                     </table>
-                                </div>
+                                </asp:Panel>
+                                
+                                <asp:Panel runat="server" ID="panNoReferences" CssClass="alert alert-warning" Visible="False">
+                                    <%= Translate.Text("No references found for this provider.") %>
+                                </asp:Panel>
                             </div>
                         </div>
                     </ItemTemplate>
