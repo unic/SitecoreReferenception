@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Configuration\ConfigurationFactory.cs" />
     <Compile Include="Configuration\ReferenceptionConfig.cs" />
+    <Compile Include="Extensions\ItemExtension.cs" />
     <Compile Include="Nodes\FieldNode.cs" />
     <Compile Include="Nodes\INode.cs" />
     <Compile Include="Nodes\ItemNode.cs" />
