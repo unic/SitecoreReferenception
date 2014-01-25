@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Referenception.Website.sitecore_modules.Shell.Referenception {
+namespace Referenception.Website.SitecoreModules.Shell.Referenception {
     
     
     public partial class ShowReferences {
@@ -20,6 +20,15 @@ namespace Referenception.Website.sitecore_modules.Shell.Referenception {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// litTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTitle;
         
         /// <summary>
         /// panNoProviders control.

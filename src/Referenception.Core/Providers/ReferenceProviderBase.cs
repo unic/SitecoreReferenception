@@ -9,6 +9,8 @@
 
     public abstract class ReferenceProviderBase
     {
+        public const string ToolTipColumnName = "Tooltip";
+        
         private readonly List<string> templates = new List<string>();
         
         public List<string> Templates
@@ -23,7 +25,7 @@
 
         public virtual ID GetLinkItemId(DataRow row)
         {
-            return null;
+            return ID.Null;
         }
 
         public virtual IDictionary<string, string> GetTooltip(DataRow row)

@@ -31,7 +31,7 @@
             table.Columns.Add(Translate.Text("Id"), typeof(ID));
             table.Columns.Add(Translate.Text("Display name"), typeof(string));
             table.Columns.Add(Translate.Text("Item path"), typeof(string));
-            table.Columns.Add(Translate.Text("Additional Informations"), typeof(IDictionary<string, string>));
+            table.Columns.Add(ToolTipColumnName, typeof(IDictionary<string, string>));
 
             var fields = sourceItem.Fields
                 .Where(field => this.FieldTypes.Any(type => type == field.Type))
@@ -62,7 +62,7 @@
 
         public override IDictionary<string, string> GetTooltip(DataRow row)
         {
-            return (IDictionary<string, string>)row[Translate.Text("Additional Informations")];
+            return (IDictionary<string, string>)row[ToolTipColumnName];
         }
     }
 }
