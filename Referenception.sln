@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Core", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Common", "src\Referenception.Common\Referenception.Common.csproj", "{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Referenception.Common.Tests", "tests\Referenception.Common.Tests\Referenception.Common.Tests.csproj", "{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34406464-A2A1-46D3-A1B0-A3A16EA21C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAFE98A-B5C3-472E-B473-6DC095F28C3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
