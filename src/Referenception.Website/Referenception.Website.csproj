@@ -74,9 +74,9 @@
     <Content Include="sitecore modules\Shell\Referenception\ShowReferences.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Referenception.Common\Referenception.Common.csproj">
+    <ProjectReference Include="..\Referenception.Providers\Referenception.Providers.csproj">
       <Project>{34406464-a2a1-46d3-a1b0-a3a16ea21c5c}</Project>
-      <Name>Referenception.Common</Name>
+      <Name>Referenception.Providers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Referenception.Core\Referenception.Core.csproj">
       <Project>{9d4f4933-73ea-4bd9-9ae1-3b5b6b705046}</Project>
