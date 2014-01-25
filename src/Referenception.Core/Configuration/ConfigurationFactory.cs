@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Configuration.Provider;
     using System.Xml;
     using System.Linq;
 
@@ -16,20 +17,40 @@
 
     public static class ConfigurationFactory
     {
-        public static IEnumerable<ReferenceProviderBase> GetProviders(ReferenceContext context)
+        private static readonly object LockObject = new object();
+
+        private static readonly IDictionary<string, IEnumerable<ReferenceProviderBase>> Cache;
+
+        private static readonly ReferenceptionConfig Config;
+
+        static ConfigurationFactory()
         {
-            Assert.ArgumentNotNull(context, "context");
-            Assert.IsNotNull(context.Item, "Item of context must not be null");
+            Cache = new Dictionary<string, IEnumerable<ReferenceProviderBase>>();
 
             var configNode = Sitecore.Configuration.Factory.GetConfigNode("referenception");
-            var config = Sitecore.Configuration.Factory.CreateObject<ReferenceptionConfig>(configNode);
-            foreach (var provider in config.Providers)
+            Config = Sitecore.Configuration.Factory.CreateObject<ReferenceptionConfig>(configNode);
+        }
+
+        public static IEnumerable<ReferenceProviderBase> GetProviders(Item item)
+        {
+            Assert.ArgumentNotNull(item, "item");
+
+            var templateName = item.TemplateName;
+            lock (LockObject)
             {
-                if (provider.Templates.Contains(context.Item.TemplateName, StringComparer.OrdinalIgnoreCase)
-                    || provider.Templates.Any(template => context.Item.HasBaseTemplate(template)))
+                if (Cache.ContainsKey(templateName))
                 {
-                    yield return provider;
+                    return Cache[templateName];
                 }
+
+                var validProviders = new List<ReferenceProviderBase>();
+                validProviders.AddRange(Config.Providers.Where(
+                        provider =>
+                            provider.Templates.Contains(item.TemplateName, StringComparer.OrdinalIgnoreCase)
+                            || provider.Templates.Any(item.HasBaseTemplate)));
+
+                Cache.Add(templateName, validProviders);
+                return validProviders;
             }
         }
     }

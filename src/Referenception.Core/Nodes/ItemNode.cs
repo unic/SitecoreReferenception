@@ -8,7 +8,7 @@
     {
         public override IEnumerable<INode> GetChildren()
         {
-            var providers = ConfigurationFactory.GetProviders(this.Context);
+            var providers = ConfigurationFactory.GetProviders(this.Context.Item);
             foreach (var provider in providers)
             {
                 provider.DisplayName = provider.ToString();
