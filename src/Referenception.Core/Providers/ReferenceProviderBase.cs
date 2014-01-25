@@ -4,6 +4,8 @@
 
     using Referenception.Core.Data;
 
+    using Sitecore.Data.Items;
+
     public abstract class ReferenceProviderBase : IReferenceProvider
     {
         private readonly List<string> templates = new List<string>();
@@ -18,6 +20,6 @@
 
         public virtual string Title { get; set; }
 
-        public abstract IEnumerable<DataTable> GetData();
+        public abstract IEnumerable<DataTable> GetData(Item item);
     }
 }

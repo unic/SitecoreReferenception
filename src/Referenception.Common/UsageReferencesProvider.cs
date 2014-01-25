@@ -12,9 +12,11 @@ namespace Referenception.Common
     using Referenception.Core.Providers;
     using Referenception.Core.Utilities;
 
+    using Sitecore.Data.Items;
+
     public class UsageReferencesProvider : ReferenceProviderBase
     {
-        public override IEnumerable<DataTable> GetData()
+        public override IEnumerable<DataTable> GetData(Item item)
         {
             return Enumerable.Empty<DataTable>();
         }

@@ -14,6 +14,8 @@ namespace Referenception.Website
     using Referenception.Core.Nodes;
     using Referenception.Core.Providers;
 
+    using Sitecore.Data.Items;
+
     public partial class Test : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -23,14 +25,14 @@ namespace Referenception.Website
 
             foreach (var provider in providers)
             {
-                this.OutputNode(provider);
+                this.OutputNode(provider, item);
             }
         }
 
-        private void OutputNode(IReferenceProvider provider)
+        private void OutputNode(IReferenceProvider provider, Item item)
         {
             Response.Write(string.Format("<h1>{0}</h1>", provider.Title));
-            foreach (var table in provider.GetData())
+            foreach (var table in provider.GetData(item))
             {
                 Response.Write(string.Format("<h2>{0}</h2>", table.Title));
 

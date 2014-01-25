@@ -8,10 +8,12 @@ namespace Referenception.Core.Providers
 {
     using Referenception.Core.Data;
 
+    using Sitecore.Data.Items;
+
     public interface IReferenceProvider
     {
         string Title { get; set; }
 
-        IEnumerable<DataTable> GetData();
+        IEnumerable<DataTable> GetData(Item item);
     }
 }
