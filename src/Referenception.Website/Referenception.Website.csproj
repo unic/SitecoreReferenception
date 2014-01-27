@@ -39,6 +39,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\lib\Sitecore.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -58,6 +61,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore modules\Shell\Referenception\ShowReferences.aspx.cs">
+      <DependentUpon>ShowReferences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sitecore modules\Shell\Referenception\ShowReferences.aspx.designer.cs">
+      <DependentUpon>ShowReferences.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Referenception.config" />
+    <Content Include="sitecore modules\Shell\Referenception\ShowReferences.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Referenception.Providers\Referenception.Providers.csproj">
+      <Project>{34406464-a2a1-46d3-a1b0-a3a16ea21c5c}</Project>
+      <Name>Referenception.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Referenception.Core\Referenception.Core.csproj">
+      <Project>{9d4f4933-73ea-4bd9-9ae1-3b5b6b705046}</Project>
+      <Name>Referenception.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sitecore modules\Shell\Referenception\assets\css\" />
+    <Folder Include="sitecore modules\Shell\Referenception\assets\js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

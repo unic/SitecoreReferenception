@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Referenception.Website")]
+[assembly: AssemblyTitle("Referenception.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Unic AG")]
-[assembly: AssemblyProduct("Referenception.Website")]
+[assembly: AssemblyProduct("Referenception.Common")]
 [assembly: AssemblyCopyright("Copyright © Unic AG 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("add0a1da-cf73-420e-8551-24f2408dd4fb")]
+[assembly: Guid("997e5805-4d94-4646-9dbd-6b5f87aedcde")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -28,7 +28,8 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Revision and Build Numbers 
+// You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.*")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

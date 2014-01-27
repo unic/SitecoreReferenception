@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>Tobias Studer, Pascal Mathys, Kevin Brechbühl</authors>
+    <owners>Uniques</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An extensible framework to show item references.</description>
+    <copyright>$copyright$</copyright>
+    <tags>Sitecore Hackathon</tags>
+  </metadata>
+  <files>
+	<file src="..\..\misc\serialization\**\*.*" target="serialization" />
+	<file src="\App_Config\**\*.*" target="content" />
+	<file src="\sitecore\**\*.*" target="content" />
+	<file src="sitecore modules\**\*.*" target="content" />
+  </files>
+</package>

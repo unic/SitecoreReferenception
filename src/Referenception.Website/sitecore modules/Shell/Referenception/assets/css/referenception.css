@@ -1,0 +1,37 @@
+* {
+	font-family: tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body {
+	font-size: 12px !important;
+}
+
+th {
+	font-weight: bold;
+}
+
+.panel-heading, .popover-icon {
+   cursor: pointer;
+}
+
+h1.title {
+	margin-left: 16px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.glyphicon {
+	font-size: 14px;
+}
+
+.popover-item-information {
+	max-width: 500px;
+}
+
+.popover-content-container {
+	display: none;
+}
+
+h2.panel-title {
+	font-size: 13px;
+}
